@@ -67,10 +67,10 @@ public record SemVer(int major, int minor, int patch) implements Comparable<SemV
 	{
 		int c = Integer.signum(o.major() - major());
 		if (c != 0)
-			return 0;
+			return c;
 		c = Integer.signum(o.minor() - minor());
 		if (c != 0)
-			return 0;
+			return c;
 		return Integer.signum(o.patch() - patch());
 	}
 }
