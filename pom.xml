@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>kryptonbutterfly</groupId>
 	<artifactId>check_release</artifactId>
-	<version>1.0.1</version>
+	<version>1.1.0</version>
 	<name>Check Release</name>
 	<description>A library to check if a new release is available in a github
 		repository.</description>

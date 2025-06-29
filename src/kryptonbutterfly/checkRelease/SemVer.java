@@ -62,15 +62,25 @@ public record SemVer(int major, int minor, int patch) implements Comparable<SemV
 		return "%s.%s.%s".formatted(major(), minor(), patch());
 	}
 	
+	public boolean isOlderThan(SemVer newer)
+	{
+		return -1 == compareTo(newer);
+	}
+	
+	public boolean isNewerThan(SemVer older)
+	{
+		return 1 == compareTo(older);
+	}
+	
 	@Override
 	public int compareTo(SemVer o)
 	{
-		int c = Integer.signum(o.major() - major());
+		int c = Integer.signum(major() - o.major());
 		if (c != 0)
 			return c;
-		c = Integer.signum(o.minor() - minor());
+		c = Integer.signum(minor() - o.minor());
 		if (c != 0)
 			return c;
-		return Integer.signum(o.patch() - patch());
+		return Integer.signum(patch() - o.patch());
 	}
 }
